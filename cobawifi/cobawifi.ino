@@ -37,18 +37,14 @@ void connect_server()
 
     //turn on led using command from server
     Serial.println(line);
-     if (line == "hidup") 
+     if (line.equalsIgnoreCase("hidup")) 
     {
       Serial.println("lampu hidup");
       digitalWrite(LED, HIGH);  
-      delay(500);              
-      digitalWrite(LED, LOW);   
-      delay(500);
-    }else if (line == "mati")
+    }else if (line.equalsIgnoreCase("mati"))
     {
       Serial.println("lampu mati");        
       digitalWrite(LED, LOW);   
-      delay(500);
     } else 
     {
       Serial.println("command salah");
